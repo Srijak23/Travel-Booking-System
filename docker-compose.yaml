@@ -1,16 +1,16 @@
-version: 3.9
+version: '3.9'
 services:
-  Nodeapp:
+  nodeapp:
     build: .
-    container_name: travel-node-app
+    container_name: node-app
     ports:
       - "4001:4000"
     environment:
       - MONGODB_URI=mongodb://mongodb:27017/travelEas
     depends_on:
-      - Mongodb
+      - mongodb
 
-  Mongodb:
+  mongodb:
     image: mongo:7.0-jammy
     container_name: mongodb
     ports:
